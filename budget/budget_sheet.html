@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TechNova 2027 – Budget Sheet</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',sans-serif;background:#0a0f1e;color:#e2e8f0;padding:32px;}
+.container{max-width:900px;margin:0 auto;}
+h1{font-size:1.5rem;font-weight:700;margin-bottom:4px;color:#60a5fa;}
+.sub{font-size:.85rem;color:#64748b;margin-bottom:28px;}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px;}
+.card{background:#111827;border:1px solid #1e3a5f;border-radius:12px;overflow:hidden;}
+.card-header{padding:14px 20px;font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;}
+.income-header{background:rgba(16,185,129,.15);color:#6ee7b7;}
+.expense-header{background:rgba(239,68,68,.12);color:#fca5a5;}
+table{width:100%;border-collapse:collapse;}
+th{padding:10px 16px;font-size:.75rem;text-transform:uppercase;letter-spacing:.05em;color:#64748b;background:#0d1624;text-align:left;}
+td{padding:10px 16px;font-size:.85rem;border-bottom:1px solid #1e293b;}
+tr:last-child td{border-bottom:none;}
+.amount{text-align:right;font-weight:600;}
+.income-amount{color:#10b981;}
+.expense-amount{color:#f87171;}
+tfoot td{background:#0d1624;font-weight:700;font-size:.9rem;}
+.summary{background:#111827;border:1px solid #1e3a5f;border-radius:12px;padding:24px;margin-bottom:24px;}
+.summary h2{font-size:1rem;color:#94a3b8;margin-bottom:16px;}
+.summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.s-card{background:#0d1624;border-radius:8px;padding:16px;text-align:center;}
+.s-label{font-size:.72rem;color:#475569;text-transform:uppercase;margin-bottom:6px;}
+.s-value{font-size:1.6rem;font-weight:700;}
+.green{color:#10b981;} .red{color:#ef4444;} .blue{color:#60a5fa;}
+.surplus-note{background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:10px;padding:16px 20px;margin-top:20px;}
+.surplus-note h3{color:#6ee7b7;font-size:.9rem;margin-bottom:10px;}
+.surplus-row{display:flex;justify-content:space-between;font-size:.83rem;padding:4px 0;border-bottom:1px solid rgba(16,185,129,.1);}
+.surplus-row:last-child{border-bottom:none;}
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>📊 TechNova 2027 — Budget Sheet</h1>
+  <div class="sub">Sri Sairam Engineering College · CSE Department · February 14–15, 2027 · Prepared by: Arjun V B (711523BCB009)</div>
+
+  <div class="summary">
+    <h2>Financial Summary</h2>
+    <div class="summary-grid">
+      <div class="s-card"><div class="s-label">Total Income</div><div class="s-value green">₹2,45,000</div></div>
+      <div class="s-card"><div class="s-label">Total Expenditure</div><div class="s-value red">₹1,97,250</div></div>
+      <div class="s-card"><div class="s-label">Net Surplus</div><div class="s-value blue">₹47,750</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <!-- INCOME -->
+    <div class="card">
+      <div class="card-header income-header">💰 Income Sources</div>
+      <table>
+        <thead><tr><th>Source</th><th class="amount">Amount (₹)</th></tr></thead>
+        <tbody>
+          <tr><td>Registration Fees (800 × ₹150 avg)</td><td class="amount income-amount">1,20,000</td></tr>
+          <tr><td>Title Sponsor</td><td class="amount income-amount">50,000</td></tr>
+          <tr><td>Co-Sponsor 1 (₹15,000)</td><td class="amount income-amount">15,000</td></tr>
+          <tr><td>Co-Sponsor 2 (₹15,000)</td><td class="amount income-amount">15,000</td></tr>
+          <tr><td>College Management Grant</td><td class="amount income-amount">40,000</td></tr>
+          <tr><td>Exhibition Stall Fees (10 × ₹500)</td><td class="amount income-amount">5,000</td></tr>
+        </tbody>
+        <tfoot><tr><td>TOTAL INCOME</td><td class="amount income-amount">2,45,000</td></tr></tfoot>
+      </table>
+    </div>
+
+    <!-- EXPENDITURE -->
+    <div class="card">
+      <div class="card-header expense-header">💸 Expenditure</div>
+      <table>
+        <thead><tr><th>Category</th><th class="amount">Amount (₹)</th></tr></thead>
+        <tbody>
+          <tr><td>Prizes, Trophies & Certificates</td><td class="amount expense-amount">55,000</td></tr>
+          <tr><td>Food & Hospitality (2 days)</td><td class="amount expense-amount">48,000</td></tr>
+          <tr><td>Technical Equipment Rental</td><td class="amount expense-amount">22,000</td></tr>
+          <tr><td>Printing (banners, brochures, IDs)</td><td class="amount expense-amount">18,000</td></tr>
+          <tr><td>Stage Décor & Lighting</td><td class="amount expense-amount">15,000</td></tr>
+          <tr><td>Photography & Videography</td><td class="amount expense-amount">12,000</td></tr>
+          <tr><td>Guest Hospitality (travel + hotel)</td><td class="amount expense-amount">10,000</td></tr>
+          <tr><td>Stationery & Misc Supplies</td><td class="amount expense-amount">5,000</td></tr>
+          <tr><td>Contingency Fund (5%)</td><td class="amount expense-amount">12,250</td></tr>
+        </tbody>
+        <tfoot><tr><td>TOTAL EXPENDITURE</td><td class="amount expense-amount">1,97,250</td></tr></tfoot>
+      </table>
+    </div>
+  </div>
+
+  <!-- PRIZE BREAKDOWN -->
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-header" style="background:rgba(245,158,11,.12);color:#fbbf24;">🏆 Prize Breakdown by Event</div>
+    <table>
+      <thead><tr><th>#</th><th>Event</th><th>1st Prize</th><th>2nd Prize</th><th>3rd Prize</th><th class="amount">Total</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Code Sprint</td><td>₹2,500</td><td>₹1,500</td><td>₹1,000</td><td class="amount">₹5,000</td></tr>
+        <tr><td>2</td><td>Paper Presentation</td><td>₹2,000</td><td>₹1,200</td><td>₹800</td><td class="amount">₹4,000</td></tr>
+        <tr><td>3</td><td>Project Expo</td><td>₹3,000</td><td>₹2,000</td><td>₹1,000</td><td class="amount">₹6,000</td></tr>
+        <tr><td>4</td><td>Hackathon (24hr)</td><td>₹8,000</td><td>₹4,500</td><td>₹2,500</td><td class="amount">₹15,000</td></tr>
+        <tr><td>5</td><td>Technical Quiz</td><td>₹1,500</td><td>₹1,000</td><td>₹500</td><td class="amount">₹3,000</td></tr>
+        <tr><td>6</td><td>Web Design</td><td>₹2,000</td><td>₹1,200</td><td>₹800</td><td class="amount">₹4,000</td></tr>
+        <tr><td>7</td><td>Debugging</td><td>₹1,000</td><td>₹700</td><td>₹300</td><td class="amount">₹2,000</td></tr>
+        <tr><td>8</td><td>Circuit Design</td><td>₹1,500</td><td>₹1,000</td><td>₹500</td><td class="amount">₹3,000</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="5">TOTAL PRIZE POOL</td><td class="amount" style="color:#fbbf24;">₹42,000</td></tr></tfoot>
+    </table>
+  </div>
+
+  <!-- SURPLUS -->
+  <div class="surplus-note">
+    <h3>✅ Surplus Utilisation Plan — ₹47,750</h3>
+    <div class="surplus-row"><span>Next year's TechNova 2028 seed fund</span><span style="color:#6ee7b7">₹25,000</span></div>
+    <div class="surplus-row"><span>Department equipment purchase (lab upgrade)</span><span style="color:#6ee7b7">₹15,000</span></div>
+    <div class="surplus-row"><span>Volunteer recognition dinner</span><span style="color:#6ee7b7">₹7,750</span></div>
+  </div>
+</div>
+</body>
+</html>

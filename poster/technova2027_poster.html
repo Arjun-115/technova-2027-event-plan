@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TechNova 2027 – Event Poster</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap');
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:#050a14;display:flex;align-items:center;justify-content:center;min-height:100vh;font-family:'Rajdhani',sans-serif;}
+.poster{width:794px;min-height:1123px;background:linear-gradient(170deg,#050a14 0%,#0d1b2e 40%,#0a0f1e 100%);
+  position:relative;overflow:hidden;padding:50px 60px;display:flex;flex-direction:column;align-items:center;}
+
+/* decorative circles */
+.circle{position:absolute;border-radius:50%;pointer-events:none;}
+.c1{width:500px;height:500px;background:radial-gradient(circle,rgba(99,102,241,.15),transparent 70%);top:-100px;right:-100px;}
+.c2{width:400px;height:400px;background:radial-gradient(circle,rgba(16,185,129,.1),transparent 70%);bottom:100px;left:-80px;}
+.c3{width:300px;height:300px;background:radial-gradient(circle,rgba(59,130,246,.12),transparent 70%);top:40%;left:60%;}
+
+/* grid overlay */
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(59,130,246,.05) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(59,130,246,.05) 1px,transparent 1px);background-size:40px 40px;pointer-events:none;}
+
+.college-name{font-size:.9rem;color:#60a5fa;letter-spacing:.2em;text-transform:uppercase;margin-bottom:8px;z-index:1;}
+.dept{font-size:.8rem;color:#475569;letter-spacing:.1em;margin-bottom:30px;z-index:1;}
+
+.logo-area{z-index:1;text-align:center;margin-bottom:10px;}
+.logo-icon{font-size:3.5rem;margin-bottom:8px;}
+
+.event-title{font-family:'Orbitron',monospace;font-size:5rem;font-weight:900;
+  background:linear-gradient(135deg,#60a5fa,#818cf8,#a78bfa);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  letter-spacing:.05em;z-index:1;line-height:1;margin-bottom:4px;}
+.edition{font-size:1rem;color:#6366f1;letter-spacing:.3em;text-transform:uppercase;z-index:1;margin-bottom:6px;}
+.tagline{font-size:1.1rem;color:#94a3b8;letter-spacing:.05em;z-index:1;margin-bottom:36px;}
+
+.date-banner{background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(139,92,246,.2));
+  border:1px solid rgba(139,92,246,.4);border-radius:50px;padding:12px 40px;
+  font-size:1.1rem;font-weight:700;color:#e2e8f0;letter-spacing:.08em;z-index:1;margin-bottom:40px;}
+
+.events-section{z-index:1;width:100%;margin-bottom:36px;}
+.events-title{font-size:.75rem;text-transform:uppercase;letter-spacing:.2em;color:#475569;text-align:center;margin-bottom:20px;}
+.events-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;}
+.event-chip{background:rgba(255,255,255,.04);border:1px solid rgba(99,102,241,.25);border-radius:10px;
+  padding:14px 10px;text-align:center;}
+.event-chip .icon{font-size:1.4rem;margin-bottom:6px;}
+.event-chip .name{font-size:.78rem;color:#c7d2fe;font-weight:600;}
+.event-chip .prize{font-size:.72rem;color:#6ee7b7;margin-top:3px;}
+
+.prizes-row{display:flex;gap:16px;z-index:1;margin-bottom:36px;width:100%;justify-content:center;}
+.prize-card{background:linear-gradient(135deg,rgba(245,158,11,.15),rgba(245,158,11,.05));
+  border:1px solid rgba(245,158,11,.3);border-radius:12px;padding:16px 24px;text-align:center;flex:1;}
+.prize-card.silver{background:linear-gradient(135deg,rgba(148,163,184,.12),rgba(148,163,184,.04));border-color:rgba(148,163,184,.3);}
+.prize-card.bronze{background:linear-gradient(135deg,rgba(180,83,9,.12),rgba(180,83,9,.04));border-color:rgba(180,83,9,.3);}
+.prize-label{font-size:.7rem;color:#94a3b8;letter-spacing:.1em;text-transform:uppercase;margin-bottom:4px;}
+.prize-amount{font-size:1.3rem;font-weight:700;color:#fbbf24;}
+.prize-card.silver .prize-amount{color:#cbd5e1;}
+.prize-card.bronze .prize-amount{color:#d97706;}
+
+.info-row{display:flex;gap:20px;z-index:1;margin-bottom:36px;width:100%;}
+.info-card{flex:1;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:14px 16px;}
+.info-label{font-size:.7rem;color:#475569;text-transform:uppercase;letter-spacing:.1em;margin-bottom:4px;}
+.info-val{font-size:.9rem;font-weight:600;color:#e2e8f0;}
+
+.register-btn{background:linear-gradient(135deg,#6366f1,#8b5cf6);border:none;border-radius:12px;
+  padding:16px 60px;font-size:1rem;font-weight:700;color:#fff;letter-spacing:.08em;text-transform:uppercase;
+  z-index:1;margin-bottom:24px;cursor:pointer;box-shadow:0 0 30px rgba(99,102,241,.4);}
+
+.contact-row{display:flex;gap:32px;z-index:1;font-size:.8rem;color:#475569;}
+.contact-row span{display:flex;align-items:center;gap:6px;}
+
+.bottom-strip{position:absolute;bottom:0;left:0;right:0;height:4px;
+  background:linear-gradient(90deg,#6366f1,#8b5cf6,#3b82f6,#06b6d4);}
+</style>
+</head>
+<body>
+<div class="poster">
+  <div class="circle c1"></div>
+  <div class="circle c2"></div>
+  <div class="circle c3"></div>
+  <div class="grid"></div>
+
+  <div class="college-name">Sri Sairam Engineering College</div>
+  <div class="dept">Department of Computer Science & Engineering</div>
+
+  <div class="logo-area">
+    <div class="logo-icon">⚡</div>
+  </div>
+
+  <div class="event-title">TECHNOVA</div>
+  <div class="edition">5th Edition · 2027</div>
+  <div class="tagline">Where Code Meets Innovation</div>
+
+  <div class="date-banner">📅 February 14 – 15, 2027 &nbsp;|&nbsp; 2 Days of Tech</div>
+
+  <div class="events-section">
+    <div class="events-title">─── 8 Flagship Events ───</div>
+    <div class="events-grid">
+      <div class="event-chip"><div class="icon">💻</div><div class="name">Code Sprint</div><div class="prize">₹5,000</div></div>
+      <div class="event-chip"><div class="icon">📄</div><div class="name">Paper Presentation</div><div class="prize">₹4,000</div></div>
+      <div class="event-chip"><div class="icon">🚀</div><div class="name">Project Expo</div><div class="prize">₹6,000</div></div>
+      <div class="event-chip"><div class="icon">⚡</div><div class="name">Hackathon 24hr</div><div class="prize">₹15,000</div></div>
+      <div class="event-chip"><div class="icon">🧠</div><div class="name">Tech Quiz</div><div class="prize">₹3,000</div></div>
+      <div class="event-chip"><div class="icon">🎨</div><div class="name">Web Design</div><div class="prize">₹4,000</div></div>
+      <div class="event-chip"><div class="icon">🐛</div><div class="name">Debugging</div><div class="prize">₹2,000</div></div>
+      <div class="event-chip"><div class="icon">🔌</div><div class="name">Circuit Design</div><div class="prize">₹3,000</div></div>
+    </div>
+  </div>
+
+  <div class="prizes-row">
+    <div class="prize-card"><div class="prize-label">🥇 Total Prize Pool</div><div class="prize-amount">₹42,000</div></div>
+    <div class="prize-card silver"><div class="prize-label">🎓 Participants from</div><div class="prize-amount" style="color:#94a3b8">40+ Colleges</div></div>
+    <div class="prize-card bronze"><div class="prize-label">👥 Expected Footprint</div><div class="prize-amount" style="color:#d97706">1000+ Students</div></div>
+  </div>
+
+  <div class="info-row">
+    <div class="info-card"><div class="info-label">📍 Venue</div><div class="info-val">Sri Sairam Engg. College, Chennai</div></div>
+    <div class="info-card"><div class="info-label">📝 Registration</div><div class="info-val">₹150 per person · Opens Jan 4</div></div>
+    <div class="info-card"><div class="info-label">🏆 Hackathon</div><div class="info-val">24 Hours · Prize ₹15,000</div></div>
+  </div>
+
+  <button class="register-btn">Register Now →</button>
+
+  <div class="contact-row">
+    <span>📧 technova@sairam.edu.in</span>
+    <span>📱 @technova_ssec</span>
+    <span>🌐 sairam.edu.in/technova</span>
+  </div>
+
+  <div class="bottom-strip"></div>
+</div>
+</body>
+</html>

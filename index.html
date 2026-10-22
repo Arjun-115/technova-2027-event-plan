@@ -1,0 +1,488 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TechNova 2027 – College Event Plan | Arjun V B</title>
+<style>
+:root{--bg:#0a0f1e;--surface:#111827;--card:#162032;--border:#1e3a5f;--accent:#6366f1;--green:#10b981;--red:#ef4444;--yellow:#f59e0b;--text:#e2e8f0;--muted:#64748b;}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--text);}
+header{background:linear-gradient(135deg,#0d1b2e,#162032);border-bottom:1px solid var(--border);padding:20px 40px;display:flex;align-items:center;gap:16px;}
+header h1{font-size:1.3rem;font-weight:700;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.student-info{margin-left:auto;text-align:right;font-size:.78rem;color:var(--muted);}
+nav{background:var(--surface);border-bottom:1px solid var(--border);padding:0 40px;display:flex;gap:0;overflow-x:auto;}
+.nav-tab{padding:14px 20px;cursor:pointer;font-size:.85rem;color:var(--muted);border-bottom:3px solid transparent;white-space:nowrap;transition:.15s;}
+.nav-tab:hover,.nav-tab.active{color:#60a5fa;border-bottom-color:#6366f1;}
+main{max-width:1000px;margin:32px auto;padding:0 24px;}
+.page{display:none;} .page.active{display:block;}
+.section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:28px;margin-bottom:20px;}
+.section h2{font-size:1.1rem;font-weight:700;margin-bottom:16px;color:#93c5fd;display:flex;align-items:center;gap:8px;}
+.section h3{font-size:.9rem;font-weight:600;margin:16px 0 10px;color:#94a3b8;}
+p,li{font-size:.88rem;line-height:1.8;color:#94a3b8;}
+ul,ol{padding-left:20px;}
+table{width:100%;border-collapse:collapse;font-size:.82rem;margin-top:8px;}
+th{background:#0d1624;padding:10px 14px;text-align:left;font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);}
+td{padding:9px 14px;border-bottom:1px solid #1e293b;}
+tr:hover td{background:rgba(255,255,255,.02);}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.72rem;font-weight:600;}
+.b-green{background:rgba(16,185,129,.15);color:#6ee7b7;}
+.b-red{background:rgba(239,68,68,.15);color:#fca5a5;}
+.b-yellow{background:rgba(245,158,11,.15);color:#fbbf24;}
+.b-blue{background:rgba(59,130,246,.15);color:#60a5fa;}
+.b-purple{background:rgba(139,92,246,.15);color:#c4b5fd;}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:20px;}
+.metric{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;}
+.metric .val{font-size:1.8rem;font-weight:700;} .metric .lbl{font-size:.72rem;color:var(--muted);margin-top:4px;}
+.timeline{display:flex;flex-direction:column;gap:0;}
+.tl-item{display:flex;gap:16px;padding:12px 0;border-left:2px solid var(--border);margin-left:8px;padding-left:20px;position:relative;}
+.tl-item::before{content:'';position:absolute;left:-5px;top:18px;width:8px;height:8px;border-radius:50%;background:#6366f1;}
+.tl-date{min-width:100px;font-size:.78rem;color:var(--accent);font-weight:600;}
+.tl-content{font-size:.83rem;color:#94a3b8;}
+.role-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:14px 16px;margin-bottom:8px;}
+.role-card .role-title{font-size:.88rem;font-weight:600;margin-bottom:4px;}
+.role-card .role-desc{font-size:.8rem;color:var(--muted);line-height:1.5;}
+.hero{background:linear-gradient(135deg,rgba(99,102,241,.15),rgba(139,92,246,.1));border:1px solid rgba(99,102,241,.3);border-radius:16px;padding:40px;text-align:center;margin-bottom:24px;}
+.hero h2{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,#60a5fa,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;}
+.hero p{font-size:.95rem;color:var(--muted);max-width:600px;margin:0 auto;}
+.links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px;}
+.link-btn{padding:10px 24px;border-radius:8px;font-size:.85rem;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block;}
+.lb-primary{background:#6366f1;color:#fff;}
+.lb-outline{background:transparent;border:1px solid var(--border);color:var(--text);}
+.lb-outline:hover{border-color:#6366f1;color:#60a5fa;}
+.checklist{display:flex;flex-direction:column;gap:8px;}
+.check-item{display:flex;align-items:center;gap:10px;font-size:.85rem;padding:8px 12px;background:rgba(255,255,255,.02);border-radius:6px;}
+.check-item .chk{width:18px;height:18px;border-radius:4px;background:rgba(16,185,129,.15);display:flex;align-items:center;justify-content:center;color:#10b981;font-size:.7rem;flex-shrink:0;}
+.reflection{background:linear-gradient(135deg,rgba(99,102,241,.08),rgba(139,92,246,.05));border:1px solid rgba(99,102,241,.2);border-radius:12px;padding:24px;margin-top:20px;}
+.reflection h3{color:#a78bfa;margin-bottom:12px;}
+blockquote{border-left:3px solid #6366f1;padding-left:16px;font-style:italic;color:#94a3b8;font-size:.88rem;line-height:1.8;}
+</style>
+</head>
+<body>
+
+<header>
+  <span style="font-size:1.8rem">🎓</span>
+  <div>
+    <h1>TechNova 2027 — College Event Plan</h1>
+    <div style="font-size:.75rem;color:var(--muted)">Assignment II · Part 2 — College Event Planning & Review</div>
+  </div>
+  <div class="student-info">
+    Arjun V B · 711523BCB009<br>
+    Sri Sairam Engineering College
+  </div>
+</header>
+
+<nav>
+  <div class="nav-tab active" onclick="show('overview')">Overview</div>
+  <div class="nav-tab" onclick="show('timeline')">Timeline & Schedule</div>
+  <div class="nav-tab" onclick="show('budget')">Budget</div>
+  <div class="nav-tab" onclick="show('promotion')">Promotion</div>
+  <div class="nav-tab" onclick="show('approvals')">Approvals</div>
+  <div class="nav-tab" onclick="show('roles')">Roles</div>
+  <div class="nav-tab" onclick="show('recording')">Recording</div>
+  <div class="nav-tab" onclick="show('review')">Post-Event Review</div>
+  <div class="nav-tab" onclick="show('checklist')">Checklist</div>
+</nav>
+
+<main>
+
+<!-- OVERVIEW -->
+<div id="page-overview" class="page active">
+  <div class="hero">
+    <div style="font-size:2.5rem;margin-bottom:12px;">⚡</div>
+    <h2>TECHNOVA 2027</h2>
+    <p>5th Annual National-Level Technical Symposium<br>February 14–15, 2027 · Sri Sairam Engineering College, Chennai</p>
+    <div class="links">
+      <a class="link-btn lb-primary" href="../poster/technova2027_poster.html" target="_blank">View Poster</a>
+      <a class="link-btn lb-outline" href="../budget/budget_sheet.html" target="_blank">View Budget Sheet</a>
+    </div>
+  </div>
+
+  <div class="metrics">
+    <div class="metric"><div class="val" style="color:#6366f1">800+</div><div class="lbl">Expected Participants</div></div>
+    <div class="metric"><div class="val" style="color:#10b981">₹2.45L</div><div class="lbl">Total Budget</div></div>
+    <div class="metric"><div class="val" style="color:#f59e0b">₹42,000</div><div class="lbl">Prize Pool</div></div>
+    <div class="metric"><div class="val" style="color:#8b5cf6">8</div><div class="lbl">Events</div></div>
+    <div class="metric"><div class="val" style="color:#60a5fa">40+</div><div class="lbl">Colleges</div></div>
+    <div class="metric"><div class="val" style="color:#ef4444">50</div><div class="lbl">Volunteers</div></div>
+  </div>
+
+  <div class="section">
+    <h2>🎯 Goal & Audience</h2>
+    <p style="margin-bottom:14px;">TechNova is Sri Sairam Engineering College's flagship technical fest, designed to provide undergraduate and postgraduate engineering students a platform to showcase technical skills, compete in real-world problem-solving, and connect with industry professionals.</p>
+
+    <h3>Primary Goal</h3>
+    <p>Bridge the gap between academia and industry through competitive, collaborative, and creative technical events over 2 days.</p>
+
+    <h3>Target Audience</h3>
+    <table>
+      <thead><tr><th>Segment</th><th>Profile</th><th>Count</th></tr></thead>
+      <tbody>
+        <tr><td>External Participants</td><td>UG/PG Engineering students from 40+ colleges, Tamil Nadu</td><td>600</td></tr>
+        <tr><td>Internal Participants</td><td>CSE/IT/ECE/MECH students, own college</td><td>200</td></tr>
+        <tr><td>Faculty Coordinators</td><td>Department faculty from visiting colleges</td><td>40</td></tr>
+        <tr><td>Industry Judges</td><td>Working professionals from tech companies</td><td>15</td></tr>
+        <tr><td>Sponsors & Chief Guests</td><td>Corporate partners, invited speakers</td><td>10</td></tr>
+        <tr><td><strong>Total</strong></td><td></td><td><strong>~865</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:20px;">8 Events</h3>
+    <table>
+      <thead><tr><th>#</th><th>Event</th><th>Category</th><th>Team Size</th><th>Prize</th></tr></thead>
+      <tbody>
+        <tr><td>1</td><td>Code Sprint</td><td><span class="badge b-blue">Programming</span></td><td>1–2</td><td>₹5,000</td></tr>
+        <tr><td>2</td><td>Paper Presentation</td><td><span class="badge b-purple">Research</span></td><td>2</td><td>₹4,000</td></tr>
+        <tr><td>3</td><td>Project Expo</td><td><span class="badge b-green">Innovation</span></td><td>2–3</td><td>₹6,000</td></tr>
+        <tr><td>4</td><td>Hackathon 24hr</td><td><span class="badge b-yellow">Innovation</span></td><td>3–4</td><td>₹15,000</td></tr>
+        <tr><td>5</td><td>Technical Quiz</td><td><span class="badge b-blue">General Tech</span></td><td>2</td><td>₹3,000</td></tr>
+        <tr><td>6</td><td>Web Design</td><td><span class="badge b-purple">Design</span></td><td>1–2</td><td>₹4,000</td></tr>
+        <tr><td>7</td><td>Debugging</td><td><span class="badge b-blue">Programming</span></td><td>1</td><td>₹2,000</td></tr>
+        <tr><td>8</td><td>Circuit Design</td><td><span class="badge b-green">ECE</span></td><td>2</td><td>₹3,000</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- TIMELINE -->
+<div id="page-timeline" class="page">
+  <div class="section">
+    <h2>📅 8-Week Preparation Timeline</h2>
+    <div class="timeline">
+      <div class="tl-item"><div class="tl-date">Dec 21</div><div class="tl-content">Form core committee; assign department-wise coordinators; create WhatsApp groups</div></div>
+      <div class="tl-item"><div class="tl-date">Dec 28</div><div class="tl-content">Finalize event list; create registration portal (Google Forms / Unstop); design poster</div></div>
+      <div class="tl-item"><div class="tl-date">Jan 4</div><div class="tl-content">Submit approval request to Principal & HOD; launch social media campaign; send brochures to 40+ colleges</div></div>
+      <div class="tl-item"><div class="tl-date">Jan 11</div><div class="tl-content">Registration opens publicly; outreach to sponsor companies; confirm chief guest invitation</div></div>
+      <div class="tl-item"><div class="tl-date">Jan 18</div><div class="tl-content">Confirm sponsors and collect sponsorship; book AV equipment; finalize judges list</div></div>
+      <div class="tl-item"><div class="tl-date">Jan 25</div><div class="tl-content">Registration closes; send participant confirmation emails; volunteer recruitment done</div></div>
+      <div class="tl-item"><div class="tl-date">Feb 1</div><div class="tl-content">Finalize participant list; print certificates, IDs; dry run of all event setups</div></div>
+      <div class="tl-item"><div class="tl-date">Feb 7</div><div class="tl-content">Full volunteer briefing (3-hour session); venue walkthrough; emergency contact list distributed</div></div>
+      <div class="tl-item"><div class="tl-date">Feb 13</div><div class="tl-content">Venue setup day: banners, stage, labs, registration desk; tech check of all systems</div></div>
+      <div class="tl-item" style="border-left-color:#6366f1;"><div class="tl-date" style="color:#10b981">Feb 14</div><div class="tl-content"><strong style="color:#6ee7b7">EVENT DAY 1</strong> — Inauguration, all events Day 1, cultural evening</div></div>
+      <div class="tl-item" style="border-left-color:#6366f1;"><div class="tl-date" style="color:#10b981">Feb 15</div><div class="tl-content"><strong style="color:#6ee7b7">EVENT DAY 2</strong> — Day 2 events, Hackathon finale, valedictory, prize distribution</div></div>
+      <div class="tl-item"><div class="tl-date">Feb 22</div><div class="tl-content">Post-event review meeting; certificates emailed; event report submitted to HOD</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🗓 Day 1 Agenda — February 14, 2027</h2>
+    <table>
+      <thead><tr><th>Time</th><th>Activity</th><th>Venue</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>08:00 AM</td><td>Volunteer muster & final briefing</td><td>Main Gate</td><td>Event Head</td></tr>
+        <tr><td>08:30 AM</td><td>Registration desk opens</td><td>Admin Block Foyer</td><td>Registration Team</td></tr>
+        <tr><td>09:00 AM</td><td>Inaugural ceremony — lamp lighting, college anthem</td><td>Auditorium</td><td>MC Team</td></tr>
+        <tr><td>09:30 AM</td><td>Chief Guest keynote address</td><td>Auditorium</td><td>Protocol Team</td></tr>
+        <tr><td>10:00 AM</td><td>All events commence simultaneously</td><td>All Halls</td><td>All Coordinators</td></tr>
+        <tr><td>01:00 PM</td><td>Lunch break</td><td>College Canteen</td><td>Hospitality Team</td></tr>
+        <tr><td>02:00 PM</td><td>Afternoon sessions + Hackathon begins (24hr clock)</td><td>All Halls + Innovation Lab</td><td>All Coordinators</td></tr>
+        <tr><td>05:30 PM</td><td>Day 1 events wrap; results tabulation</td><td>All Halls</td><td>Judges</td></tr>
+        <tr><td>06:00 PM</td><td>Cultural evening / DJ Night</td><td>Open Air Stage</td><td>Cultural Team</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>🗓 Day 2 Agenda — February 15, 2027</h2>
+    <table>
+      <thead><tr><th>Time</th><th>Activity</th><th>Venue</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>09:00 AM</td><td>Day 2 check-in & registration</td><td>Admin Block Foyer</td><td>Registration Team</td></tr>
+        <tr><td>09:30 AM</td><td>Project Expo judging begins</td><td>Exhibition Hall</td><td>Expo Team</td></tr>
+        <tr><td>10:00 AM</td><td>Web Design, App Dev, Tech Quiz Finals</td><td>Computer Labs + Hall B</td><td>Event Coordinators</td></tr>
+        <tr><td>12:30 PM</td><td>Hackathon midpoint review</td><td>Innovation Lab</td><td>Hackathon Team</td></tr>
+        <tr><td>01:00 PM</td><td>Lunch break</td><td>College Canteen</td><td>Hospitality Team</td></tr>
+        <tr><td>02:00 PM</td><td>Hackathon final submissions</td><td>Innovation Lab</td><td>Hackathon Team</td></tr>
+        <tr><td>02:30 PM</td><td>Valedictory ceremony begins</td><td>Auditorium</td><td>MC Team</td></tr>
+        <tr><td>03:00 PM</td><td>Results announcement — all events</td><td>Auditorium</td><td>Event Head</td></tr>
+        <tr><td>03:30 PM</td><td>Prize distribution & certificates</td><td>Auditorium</td><td>Principal + Guests</td></tr>
+        <tr><td>04:30 PM</td><td>Group photo & event close</td><td>Main Stage</td><td>Photography Team</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- BUDGET -->
+<div id="page-budget" class="page">
+  <div class="section">
+    <h2>💰 Budget Overview</h2>
+    <div class="metrics">
+      <div class="metric"><div class="val" style="color:#10b981">₹2,45,000</div><div class="lbl">Total Income</div></div>
+      <div class="metric"><div class="val" style="color:#ef4444">₹1,97,250</div><div class="lbl">Total Expenditure</div></div>
+      <div class="metric"><div class="val" style="color:#60a5fa">₹47,750</div><div class="lbl">Net Surplus</div></div>
+    </div>
+    <p style="margin-bottom:16px;">Full detailed budget sheet: <a href="../budget/budget_sheet.html" target="_blank" style="color:#60a5fa">Open Budget Sheet →</a></p>
+
+    <h3>Income Sources</h3>
+    <table>
+      <thead><tr><th>Source</th><th>Amount (₹)</th></tr></thead>
+      <tbody>
+        <tr><td>Registration Fees (800 × ₹150 avg)</td><td>1,20,000</td></tr>
+        <tr><td>Title Sponsor</td><td>50,000</td></tr>
+        <tr><td>Co-Sponsors (2 × ₹15,000)</td><td>30,000</td></tr>
+        <tr><td>College Management Grant</td><td>40,000</td></tr>
+        <tr><td>Exhibition Stall Fees</td><td>5,000</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>2,45,000</strong></td></tr>
+      </tbody>
+    </table>
+
+    <h3>Expenditure</h3>
+    <table>
+      <thead><tr><th>Category</th><th>Amount (₹)</th></tr></thead>
+      <tbody>
+        <tr><td>Prizes, Trophies & Certificates</td><td>55,000</td></tr>
+        <tr><td>Food & Hospitality (2 days)</td><td>48,000</td></tr>
+        <tr><td>Technical Equipment Rental</td><td>22,000</td></tr>
+        <tr><td>Printing & Branding</td><td>18,000</td></tr>
+        <tr><td>Stage Décor & Lighting</td><td>15,000</td></tr>
+        <tr><td>Photography & Videography</td><td>12,000</td></tr>
+        <tr><td>Guest Hospitality</td><td>10,000</td></tr>
+        <tr><td>Stationery</td><td>5,000</td></tr>
+        <tr><td>Contingency (5%)</td><td>12,250</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>1,97,250</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- PROMOTION -->
+<div id="page-promotion" class="page">
+  <div class="section">
+    <h2>📣 Promotion Strategy</h2>
+    <h3>Digital Channels</h3>
+    <table>
+      <thead><tr><th>Channel</th><th>Content</th><th>Frequency</th></tr></thead>
+      <tbody>
+        <tr><td>Instagram (@technova_ssec)</td><td>Posters, reels, countdowns</td><td>Daily (last 2 weeks)</td></tr>
+        <tr><td>WhatsApp Broadcast</td><td>Registration links, reminders</td><td>Weekly + Day-before</td></tr>
+        <tr><td>LinkedIn</td><td>Event announcement, sponsor posts</td><td>3 times</td></tr>
+        <tr><td>College Website</td><td>Event page + registration link</td><td>Ongoing</td></tr>
+        <tr><td>Unstop / HackerEarth</td><td>Event listing for external registrations</td><td>From Week 6</td></tr>
+        <tr><td>Email</td><td>College-wise coordinator emails (40 colleges)</td><td>Week 6</td></tr>
+      </tbody>
+    </table>
+    <h3>Physical Promotion</h3>
+    <ul style="margin-top:8px;">
+      <li>Posters in 5 nearby engineering colleges (with permission)</li>
+      <li>Standees at college entrance and all department notice boards</li>
+      <li>Morning assembly announcement (Weeks 5–6)</li>
+      <li>WhatsApp groups of all department student representatives</li>
+    </ul>
+    <h3>Promotion Week-by-Week Plan</h3>
+    <table>
+      <thead><tr><th>Week</th><th>Campaign Focus</th></tr></thead>
+      <tbody>
+        <tr><td>Week 8</td><td>Logo + theme reveal teaser</td></tr>
+        <tr><td>Week 7</td><td>Event list reveal (1 event per day posts)</td></tr>
+        <tr><td>Week 6</td><td>Registration opens — big launch post</td></tr>
+        <tr><td>Week 5</td><td>Sponsor reveal + chief guest announcement</td></tr>
+        <tr><td>Week 4</td><td>Participant testimonials from past editions</td></tr>
+        <tr><td>Week 3</td><td>Countdown posts + last-chance reminder</td></tr>
+        <tr><td>Week 2</td><td>"Seats filling fast" urgency posts</td></tr>
+        <tr><td>Week 1</td><td>Day-wise schedule + venue map</td></tr>
+        <tr><td>Day of</td><td>Live updates, Stories, Reels every 2 hours</td></tr>
+        <tr><td>Post-event</td><td>Winner announcements + thank-you wrap post</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- APPROVALS -->
+<div id="page-approvals" class="page">
+  <div class="section">
+    <h2>✅ Approvals & Permissions</h2>
+    <h3>Internal Approvals</h3>
+    <table>
+      <thead><tr><th>Approval Required</th><th>Authority</th><th>Deadline</th></tr></thead>
+      <tbody>
+        <tr><td>Event sanction letter</td><td>Principal</td><td>Week 6 (Jan 4)</td></tr>
+        <tr><td>HOD approval (each dept.)</td><td>Respective HODs</td><td>Week 6</td></tr>
+        <tr><td>Venue booking</td><td>Administrative Officer</td><td>Week 6</td></tr>
+        <tr><td>Financial approval</td><td>Finance Officer / Management</td><td>Week 5</td></tr>
+        <tr><td>Auditorium booking</td><td>Facilities Manager</td><td>Week 6</td></tr>
+        <tr><td>Computer Lab booking</td><td>Lab In-charge</td><td>Week 5</td></tr>
+        <tr><td>Overnight Hackathon permission</td><td>Principal</td><td>Week 5</td></tr>
+        <tr><td>Food stall permission</td><td>Canteen In-charge</td><td>Week 4</td></tr>
+      </tbody>
+    </table>
+    <h3>External Permissions</h3>
+    <ul style="margin-top:8px;">
+      <li>Police permission for large gathering (&gt;500 external) — submitted 4 weeks prior</li>
+      <li>Noise permit for DJ/cultural evening — submitted 3 weeks prior</li>
+      <li>Fire safety NOC from college safety officer</li>
+    </ul>
+    <h3>Approval Flow</h3>
+    <div style="background:#0d1624;border-radius:8px;padding:16px;font-family:monospace;font-size:.8rem;color:#94a3b8;margin-top:8px;line-height:2;">
+      Student Event Head → Dept. Faculty Coordinator → HOD → Vice Principal → Principal → Management (if &gt;₹1L)
+    </div>
+  </div>
+</div>
+
+<!-- ROLES -->
+<div id="page-roles" class="page">
+  <div class="section">
+    <h2>👥 Event-Day Roles & Responsibilities</h2>
+    <div class="role-card"><div class="role-title">🎯 Event Head — Arjun V B</div><div class="role-desc">Overall coordination, crisis management, final decisions on-day. Single point of contact for all coordinators.</div></div>
+    <div class="role-card"><div class="role-title">🤝 Deputy Head</div><div class="role-desc">Backup for Event Head. Handles logistics, vendor payments, equipment issues.</div></div>
+    <div class="role-card"><div class="role-title">💰 Finance Coordinator</div><div class="role-desc">Cash management, sponsor liaison, real-time expense tracking, petty cash.</div></div>
+    <div class="role-card"><div class="role-title">📝 Registration Coordinator</div><div class="role-desc">Registration desk management, participant data, ID card issuance, attendance tracking.</div></div>
+    <div class="role-card"><div class="role-title">💻 Technical Coordinator</div><div class="role-desc">Lab and AV setup, internet connectivity, tech issue resolution, backup systems.</div></div>
+    <div class="role-card"><div class="role-title">🍽 Hospitality Coordinator</div><div class="role-desc">Food arrangement, guest reception, accommodation, VIP transport.</div></div>
+    <div class="role-card"><div class="role-title">🎤 Stage & MC</div><div class="role-desc">Programme anchoring, stage management, timing of all ceremonies.</div></div>
+    <div class="role-card"><div class="role-title">📸 Publicity Coordinator</div><div class="role-desc">Live social media updates, photography, video direction, reels.</div></div>
+    <div class="role-card"><div class="role-title">🙋 Volunteer Head (50 volunteers)</div><div class="role-desc">Volunteer duty allocation, muster, on-day management, morale.</div></div>
+
+    <h3 style="margin-top:20px;">Volunteer Deployment</h3>
+    <table>
+      <thead><tr><th>Station</th><th>Count</th><th>Duty</th></tr></thead>
+      <tbody>
+        <tr><td>Main Gate & Entry</td><td>5</td><td>Entry control, ID verification</td></tr>
+        <tr><td>Registration Desk</td><td>8</td><td>Check-in, kit distribution</td></tr>
+        <tr><td>Seminar Halls (A & B)</td><td>6</td><td>Seating, announcements, judge assistance</td></tr>
+        <tr><td>Computer Labs</td><td>8</td><td>Monitor participants, technical help</td></tr>
+        <tr><td>Exhibition Hall</td><td>6</td><td>Project expo setup and supervision</td></tr>
+        <tr><td>Auditorium</td><td>6</td><td>Seating, ushering, stage help</td></tr>
+        <tr><td>Food Area</td><td>5</td><td>Food distribution, queue management</td></tr>
+        <tr><td>Roving</td><td>6</td><td>General help, message running</td></tr>
+        <tr><td><strong>Total</strong></td><td><strong>50</strong></td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- RECORDING -->
+<div id="page-recording" class="page">
+  <div class="section">
+    <h2>🎥 Recording & Documentation Plan</h2>
+    <table>
+      <thead><tr><th>What to Record</th><th>Method</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td>Inauguration & Valedictory</td><td>Professional videographer (hired)</td><td>Publicity Team</td></tr>
+        <tr><td>All event sessions</td><td>3 assigned volunteer photographers</td><td>Publicity Team</td></tr>
+        <tr><td>Hackathon progress</td><td>Time-lapse + periodic photos</td><td>Hackathon Team</td></tr>
+        <tr><td>Winner moments</td><td>Photographer + phone backup</td><td>Publicity Team</td></tr>
+        <tr><td>Behind-the-scenes</td><td>Instagram Stories/Reels by volunteers</td><td>Social Media Team</td></tr>
+        <tr><td>Attendance</td><td>Physical sign-in sheets + Google Form QR</td><td>Registration Team</td></tr>
+        <tr><td>Participant feedback</td><td>Google Form QR code at exit gate</td><td>Quality Team</td></tr>
+        <tr><td>Financial records</td><td>Real-time expense log</td><td>Finance Coordinator</td></tr>
+        <tr><td>Incident log</td><td>Core committee WhatsApp group</td><td>Event Head</td></tr>
+      </tbody>
+    </table>
+    <h3 style="margin-top:20px;">Post-Event Archive Timeline</h3>
+    <ul>
+      <li>All photos uploaded to shared Google Drive — <strong>within 48 hours</strong></li>
+      <li>Video highlights edited and posted — <strong>within 1 week</strong></li>
+      <li>Full event report submitted to HOD — <strong>within 10 days</strong></li>
+      <li>Certificate soft copies emailed to participants — <strong>within 2 weeks</strong></li>
+    </ul>
+  </div>
+</div>
+
+<!-- POST-EVENT REVIEW -->
+<div id="page-review" class="page">
+  <div class="section">
+    <h2>📊 Post-Event Review Framework</h2>
+    <h3>Review Meeting — February 22, 2027</h3>
+    <p>Attendees: All core committee + faculty coordinator | Duration: 2 hours</p>
+    <table style="margin-top:12px;">
+      <thead><tr><th>Agenda Item</th><th>Duration</th></tr></thead>
+      <tbody>
+        <tr><td>What went well</td><td>15 min</td></tr>
+        <tr><td>What went wrong / improvements needed</td><td>20 min</td></tr>
+        <tr><td>Participant feedback analysis</td><td>15 min</td></tr>
+        <tr><td>Financial reconciliation</td><td>15 min</td></tr>
+        <tr><td>Action items for TechNova 2028</td><td>15 min</td></tr>
+        <tr><td>Appreciation & closure</td><td>10 min</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Success Metrics</h3>
+    <table>
+      <thead><tr><th>Metric</th><th>Target</th><th>Measurement</th></tr></thead>
+      <tbody>
+        <tr><td>Overall satisfaction score</td><td>≥ 4.0 / 5.0</td><td>Google Form feedback</td></tr>
+        <tr><td>Registration → attendance rate</td><td>≥ 80%</td><td>Sign-in vs registered count</td></tr>
+        <tr><td>Event start punctuality</td><td>≤ 15 min delay</td><td>MC/coordinator log</td></tr>
+        <tr><td>Food quality rating</td><td>≥ 3.8 / 5.0</td><td>Feedback form</td></tr>
+        <tr><td>Technical issues</td><td>≤ 3 incidents</td><td>Incident log</td></tr>
+        <tr><td>Social media reach</td><td>≥ 10,000 impressions</td><td>Instagram analytics</td></tr>
+        <tr><td>Budget adherence</td><td>Within 5% of plan</td><td>Finance reconciliation</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Lessons from TechNova 2026</h3>
+    <ol style="margin-top:8px;">
+      <li><strong>Registration bottleneck</strong> — 200 people in first 30 min → Fix: Pre-assigned time slots</li>
+      <li><strong>Wi-Fi overload</strong> — Internet failed during coding contest → Fix: Dedicated LAN for labs</li>
+      <li><strong>Food delay</strong> — Lunch 45 min late → Fix: Pre-order 3 days ahead; stagger lunch</li>
+      <li><strong>Certificate errors</strong> — 12 names misspelled → Fix: Participant self-verify portal 1 week before</li>
+      <li><strong>Low social reach</strong> — Only 3,000 impressions → Fix: Dedicated reels volunteer + post every 2 hrs</li>
+    </ol>
+
+    <div class="reflection">
+      <h3>💭 Student Reflection</h3>
+      <blockquote>
+        "Having organized TechNova 2026 as a department coordinator, the biggest learning was that
+        communication gaps cause 80% of event-day problems. All the plans were on paper but the
+        volunteer briefing happened just 30 minutes before the event opened — nobody knew their
+        exact station. For TechNova 2027, I would enforce a mandatory 3-hour volunteer orientation
+        one week before, a dedicated broadcast-only WhatsApp group for day-of updates, and a
+        15-minute morning muster before anything opens. The best part of organizing an event is
+        watching 800 strangers walk in, compete, make friends, and leave with something they
+        couldn't find in a classroom."
+        <br><br>— Arjun V B, 711523BCB009
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+<!-- CHECKLIST -->
+<div id="page-checklist" class="page">
+  <div class="section">
+    <h2>✅ Submission Checklist</h2>
+    <h3>Assignment Deliverables</h3>
+    <div class="checklist">
+      <div class="check-item"><div class="chk">✓</div> Event goal and target audience defined</div>
+      <div class="check-item"><div class="chk">✓</div> Timing — 8-week prep timeline + Day 1 & Day 2 agendas</div>
+      <div class="check-item"><div class="chk">✓</div> Preparation checklist with week-by-week plan</div>
+      <div class="check-item"><div class="chk">✓</div> Budget — income, expenditure, surplus utilisation</div>
+      <div class="check-item"><div class="chk">✓</div> Promotion — digital + physical + week-by-week content plan</div>
+      <div class="check-item"><div class="chk">✓</div> Approvals — internal (Principal, HOD, Admin) + external (Police, Noise permit)</div>
+      <div class="check-item"><div class="chk">✓</div> Event-day roles — 9 core roles + 50 volunteer deployment</div>
+      <div class="check-item"><div class="chk">✓</div> Recording plan — photography, video, attendance, feedback, financials</div>
+      <div class="check-item"><div class="chk">✓</div> Post-event review — meeting agenda, success metrics, lessons learned</div>
+      <div class="check-item"><div class="chk">✓</div> Event poster (digital) — poster/technova2027_poster.html</div>
+      <div class="check-item"><div class="chk">✓</div> Budget sheet (interactive) — budget/budget_sheet.html</div>
+      <div class="check-item"><div class="chk">✓</div> Full event plan document — docs/event_plan.md</div>
+      <div class="check-item"><div class="chk">✓</div> Student reflection included</div>
+      <div class="check-item" style="opacity:.6;"><div class="chk" style="background:rgba(245,158,11,.15);color:#fbbf24;">!</div> 5–8 min narrated video walkthrough — record yourself presenting this plan</div>
+    </div>
+
+    <h3 style="margin-top:24px;">Video Recording Script (5–8 minutes)</h3>
+    <ol>
+      <li><strong>(0–1 min)</strong> Introduce yourself, the event name, and what TechNova is. Show the poster.</li>
+      <li><strong>(1–2 min)</strong> Walk through the goal and audience — why this event matters for students.</li>
+      <li><strong>(2–3 min)</strong> Show the 8-week timeline and Day 1/Day 2 agenda.</li>
+      <li><strong>(3–4 min)</strong> Explain the budget — where money comes from, where it goes.</li>
+      <li><strong>(4–5 min)</strong> Talk through promotion strategy and approval process.</li>
+      <li><strong>(5–6 min)</strong> Explain roles, volunteer deployment, and day-of operations.</li>
+      <li><strong>(6–7 min)</strong> Describe what gets recorded and how the post-event review works.</li>
+      <li><strong>(7–8 min)</strong> Share your personal reflection — what you learned from TechNova 2026.</li>
+    </ol>
+    <p style="margin-top:12px;color:var(--muted);">Use Loom (free) at loom.com or OBS Studio to record your screen + webcam while presenting this webpage.</p>
+  </div>
+</div>
+
+</main>
+
+<script>
+function show(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.currentTarget.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
